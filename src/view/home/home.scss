@@ -1,0 +1,299 @@
+@font-face {
+  font-family: circular;
+  src: url(../../fonts/Circular/CircularStd-Black.otf);
+}
+
+.container-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 750px;
+  font-family: circular;
+  background-image:  url('../../images/900959.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .image-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 746px;
+   
+  }
+
+  .title-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 330px;
+    color: #ffffff;
+
+    h4 {
+      text-shadow: 0 3px 6px #0a0708;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 22px 56px;
+      border: none;
+      border-radius: 50px;
+      background-color: #ffffff;
+      box-shadow: 0px 3px 10px #0a0708;
+      font-size: 18px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      
+      p {
+        margin: 0;
+        -webkit-text-fill-color: transparent !important;
+        background: linear-gradient(
+          90deg, #9e00b9 0%, #f97c06  135.12%) !important;
+              -webkit-background-clip: -webkit-text !important;
+              -webkit-background-clip: text !important;
+      }
+    }
+  }
+ 
+}
+
+.bg-mid {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+  font-family: "Roboto" , sans-serif;
+
+  .container-mid {
+    width: 100%;
+    padding: 0 150px;
+
+    h2 {
+      margin-bottom: 50px;
+      font-family: circular;
+      color: #222222;
+    }
+
+    .c-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .in-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        
+        picture {
+
+          img {
+            width: 350px;
+            height: 265px;
+            border-radius: 10px
+          }
+        }
+
+        h3 {
+          font-weight: bold;
+        }
+
+        span {
+          display: inline-grid;
+          margin-bottom: 100px;
+        }
+        
+      }
+     
+    }
+    
+  }
+}
+
+.container-3 {
+  display: flex;
+  width: 100%;
+  height: 482px;
+  padding: 0 150px;
+  margin-bottom: 100px;
+
+
+  .in-container-3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: #6F019C;
+    background-image: url('../../images/terima-tamu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius:16px;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    cursor: pointer;
+
+    .c-title-3 {
+      width: 500px;
+      padding-left: 100px;
+
+      h1 {
+        font-size: 48px;
+      }
+
+      button {
+        margin-top: 50px;
+        padding: 14px 24px;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+      }
+    }
+    
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f7f7f7;
+  padding:50px 150px;
+  font-family: "Roboto", sans-serif;
+  border-top: 1px solid #d7d7d7;
+
+  p {
+    margin: 0;
+  }
+  
+  img {
+    margin-left: 10px;
+  }
+}
+
+// Responsive Tampilan Di Handphone
+
+@media (max-width: 575.98px) {
+
+  .container-top {
+    text-align: center;
+    height: 500px;
+
+    .title-top {
+        margin-top: 250px;
+
+      h4 {
+        padding: 0 20px;
+        font-size: 20px;
+      }
+
+      button {
+        padding: 10px 25px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .bg-mid {
+    .container-mid {
+      padding: 0px;
+
+    h2 {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .c-box {
+      display: flex;
+      justify-content: center;
+
+      .in-box {
+
+        picture {
+          img {
+            width: 300px;
+            height: 200px;
+          }
+        }
+        
+        span {
+            margin-bottom: 50px;
+        }
+      }
+
+    }
+
+     }
+  }
+
+  .container-3 {
+    padding: 0;
+    height: 300px;
+
+    .in-container-3 {
+      background-size: 800px;
+      border-radius: 0px;
+
+      .c-title-3 {
+        width: 250px;
+        padding-left: 30px;
+        text-shadow: 0 3px 6px #030303;
+
+        h1 {
+          font-size: 30px;
+        }
+
+        h5 {
+          font-size: 16px;
+        }
+
+        button {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 20px 10px;
+  }
+
+ }
+
+// Responsive Tampilan di Tablet
+
+ @media (max-width: 991.98px) { 
+
+    .bg-mid {
+      
+      .container-mid {
+        padding: 0 20px;
+      }
+    }
+
+    .container-3 {
+      padding: 0;
+
+      .in-container-3 {
+        border-radius: 0;
+
+        .c-title-3 {
+          width: 300px;
+          padding-left: 30px;
+          text-shadow: 0 3px 6px #222222;
+        }
+      }
+    }
+
+    footer {
+      padding: 30px 20px;
+    }
+
+  }

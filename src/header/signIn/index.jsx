@@ -22,9 +22,8 @@ const SignIn = () => {
     
     axios.post('http://18.139.84.71/login', objInput )
     .then(({data}) =>{
-      // localStorage.setItem(key : "token", value: data.token)
-     localStorage.setItem("token", data.Data);
-     localStorage.setItem("user", data.Message);
+     localStorage.setItem("token", data.Data.Token);
+     localStorage.setItem("user", data.Data.ID);
       window.location.reload();
     }).catch((err)=>{
       console.log(err);

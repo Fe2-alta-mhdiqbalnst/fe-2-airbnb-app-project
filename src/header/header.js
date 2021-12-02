@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { fetchPost } from "../store/actions/fetchPost";
 import SignUp from './signUp';
 import SignIn from './signIn';
+import Account from './account';
 
 
 const Header = () => {
@@ -41,7 +42,7 @@ const Header = () => {
     }
     return (
       <div>
-        <p>Akun</p>
+        <p><Account/></p>
         <button onClick={() => logout()}>logout</button>
       </div>
     )

@@ -2,24 +2,42 @@ import React, { useEffect, useState } from 'react';
 import './Reservation.scss';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
-import a from '../images/a.jpg';
-import b from '../images/b.jpg';
-import c from '../images/c.jpg';
-import d from '../images/d.jpg';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import a from '../../images/a.jpg';
+import b from '../../images/b.jpg';
+import c from '../../images/c.jpg';
+import d from '../../images/d.jpg';
 
 
-const Reservation = ({google} = []) => {
+const Reservation = () => {
   const [detail, setDetail] = useState(null);
   const params = useParams();
   const posts = useSelector(({listPost}) => listPost);
 
 
-  // const [usersID, setUsersID] = useState('');
-  // const [homestayID, setHomestayID] = useState('');
-  // const [nameHomestay, setNameHomestay] = useState('');
-  // const [startDate, setStartDate] = useState('');
-  // const [endDate, setEndDate] = useState('');
+  const [usersID, setUsersID] = useState('');
+  const [homestayID, setHomestayID] = useState('');
+  const [nameHomestay, setNameHomestay] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [ciDate, setCIDate] = useState(Date);
+  const [coDate, setCODate] = useState(Date);
+
+  const submitCA = (e) => {
+    e.preventDefault();
+    if(!ciDate && !coDate) return alert('Please enter the right date!')
+    // dispatch(fetchAsyncCA(ciDate));
+    // dispatch(fetchAsyncCO(coDate));
+  }
+
+  const handleReserve = (e) => {
+    e.preventDefault();
+    // if(!usersID && !homestayID && !nameHomestay &&!startDate && !endDate) {
+    //   alert('not found')
+    // } else {
+    //   console.log("masuk reservation checkout")
+    // }
+  }
+  
 
   // const handleReserve = () => {
   //   const body = {
@@ -88,17 +106,6 @@ const Reservation = ({google} = []) => {
           <p>Latitude, Longitude</p>
           <p></p>
         </div>
-        <Map google={google} zoom={14}>
-  
-          <Marker onClick={onMarkerClick}
-                  name={'Current location'} />
-  
-          <InfoWindow onClose={onInfoWindowClose}>
-              <div>
-                <h1>{selectedPlace.name}</h1>
-              </div>
-          </InfoWindow>
-        </Map>
       </div>
 
       <section className="sec-left">
@@ -108,6 +115,17 @@ const Reservation = ({google} = []) => {
         {/* {data.id_facility} */}
       </div>
 
+        <div className="check-availability">
+          <p>Let's check this out!</p>
+          <div className="date-available">
+             <form>
+              <p>CHECK-IN <span>:</span><input type="date" placeholder="dd/mm/yyyy" value={ ciDate } onChange={(e) => setCIDate(e.target.value)}/></p>
+              <p className="line-color">CHECKOUT <span>:</span> <input type="date" placeholder="dd/mm/yyyy" value={ coDate } onChange={(e) => setCODate(e.target.value)}/></p>
+              <button onClick={submitCA}>Check availability</button>
+            </form>
+          </div>
+        </div>
+
         <div className="reservation-form">
           <h5>Reservation</h5>
           <div className="reservation-column">
@@ -115,10 +133,12 @@ const Reservation = ({google} = []) => {
               <p className="line-color">User ID <span>:</span> {detail.id}</p>
               <p>Homestay ID<span>:</span> {detail.id}</p>
               <p className="line-color">Name <span>:</span> {detail.id}</p>
-              <p>Start Date <span>:</span>{/* {start_date} */}</p>
-              <p className="line-color">End Date <span>:</span> {/* {end_date} */}</p>
-              <p className="total-price">Total Price <span>:</span> {/*{total_harga}*/}</p>
-              <button type="submit" /* onClick={() => handleReserve()} */>Reserve</button>
+              <div className="date-reserve">
+              <p>Start Date <span>:</span><input type="date" placeholder="dd/mm/yyyy"/></p>
+              <p className="line-color">End Date <span>:</span> <input type="date" placeholder="dd/mm/yyyy"/></p>
+              </div>
+              <p className="total-price">Total Price <span>: Rp.</span> {/*{total_harga}*/}</p>
+              <button type="submit" onClick={() => handleReserve()}>Reserve</button>
             </form>
           </div>
         </div>
@@ -127,9 +147,7 @@ const Reservation = ({google} = []) => {
   )
 }
 
-export default GoogleApiWrapper({
-  apiKey: ("AIzaSyBbKJhUzwP2Vz-c06djfKSUgXTF757AakI")
-})(Reservation)
+export default Reservation;
 
 
 

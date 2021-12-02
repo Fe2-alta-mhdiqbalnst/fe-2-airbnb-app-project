@@ -17,7 +17,7 @@ const Header = () => {
     e.preventDefault();
     console.log(location);
     if (location === "") return alert("Please enter keyword you want to search!")
-    dispatch(fetchPost(location.title));
+    // dispatch(fetchPost(location.title));
   }
 
   const handleChange = (e) => {
@@ -67,7 +67,7 @@ const Header = () => {
               </form>
               <div className="navbar-btn">
                 <button className="user">
-                  <Link to="/detail/1">
+                  <Link to="/reservation-detail/1">
                   <FaBars className="bars"/>
                   </Link>
                   <FaUserCircle className="user-img"/></button>
@@ -75,15 +75,6 @@ const Header = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-        {/* {
-        show?
-        <div className="calendar">
-        <Calendar onChange={onChange} value={startDate} />{startDate.toString()}
-        </div>
-        : null
-        } */}
-
-
     </div>
   );
 };

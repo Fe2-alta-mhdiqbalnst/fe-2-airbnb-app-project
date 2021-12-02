@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const fetchPost = () => {
   return (dispatch) => {
-    axios.get("https://jsonplaceholder.typicode.com/posts") //server link dari backend
+    axios.get("https://18.139.84.71/homestay") //server link dari backend
     .then(({data}) => {
       dispatch(setPost(data))
       console.log(data);

@@ -5,9 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import Header from './header/header';
-// import SignUp from './view/signUp';
-// import SignIn from './view/signIn';
 import Home from './view/home';
+import Homestay from './view/homestay-list';
 
 function App() {
   return (
@@ -15,6 +14,9 @@ function App() {
     <Header></Header>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/homestay" element={<Homestay />} >
+      <Route path="/homestay/:idroom" element={<Homestay />} />
+      </Route>
     </Routes>
   </BrowserRouter>
   );

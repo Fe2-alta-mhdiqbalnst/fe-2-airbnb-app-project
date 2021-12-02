@@ -2,10 +2,9 @@ import axios from 'axios';
 
 export const fetchPost = () => {
   return (dispatch) => {
-    axios.get("https://jsonplaceholder.typicode.com/posts") //server link dari backend
+    axios.get("http://18.139.84.71/homestay") //server link dari backend
     .then(({data}) => {
       dispatch(setPost(data))
-      console.log(data);
     })
     .catch((err) => {
       console.log(err);

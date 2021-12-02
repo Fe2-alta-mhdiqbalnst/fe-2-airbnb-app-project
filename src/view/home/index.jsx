@@ -1,5 +1,5 @@
 import './home.scss';
-// import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import a from '../../images/a.jpg';
 import b from '../../images/b.jpg';
 import c from '../../images/c.jpg';
@@ -9,14 +9,18 @@ import instagram from '../../images/instagram.png';
 import twitter from '../../images/twitter.png';
 
 const Home = () => {
- 
+ const navigate = useNavigate();
+ const toHomeStay = () => {
+   navigate('/homestay');
+ }
+
   return (
     <>
     <div className="container-top">
         <div className="image-top">
           <div div className="title-top">
             <h4>Belum punya tujuan? Kami bisa membantu Anda.</h4>
-            <button className="list"><p>Perjalanan untuk anda</p></button>
+            <button className="list" onClick={() => toHomeStay()}><p>Perjalanan untuk anda</p></button>
           </div>
         </div>
     </div>

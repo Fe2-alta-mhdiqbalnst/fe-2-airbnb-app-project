@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import './Header.scss';
+import './header.scss';
 import { FaUserCircle } from 'react-icons/fa';
 import { FaBars } from 'react-icons/fa'
 import { Link } from "react-router-dom";
 import { Navbar, Container } from 'react-bootstrap';
-import 'react-dates/initialize';
 import { useDispatch } from "react-redux";
 import { fetchPost } from "../store/actions/fetchPost";
 

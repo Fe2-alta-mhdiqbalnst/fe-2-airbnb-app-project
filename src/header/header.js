@@ -3,9 +3,11 @@ import './header.scss';
 import { FaUserCircle } from 'react-icons/fa';
 import { FaBars } from 'react-icons/fa'
 import { Link } from "react-router-dom";
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar, Container, Dropdown } from 'react-bootstrap';
 import { useDispatch } from "react-redux";
 import { fetchPost } from "../store/actions/fetchPost";
+import SignUp from './signUp';
+import SignIn from './signIn';
 
 
 const Header = () => {
@@ -23,6 +25,27 @@ const Header = () => {
   const handleChange = (e) => {
     console.group(e, 'onChange')
   };
+
+  const token = localStorage.getItem("token");
+  
+  const logout = () => {
+    localStorage.clear()
+    window.location.reload();
+  }
+
+  const login = () => {
+    if (token === null){
+      return(
+        [<SignUp />,<SignIn />]
+      )
+    }
+    return (
+      <div>
+        <p>Akun</p>
+        <button onClick={() => logout()}>logout</button>
+      </div>
+    )
+  }
 
   return (
     <div className="header">
@@ -66,11 +89,16 @@ const Header = () => {
                 </div>
               </form>
               <div className="navbar-btn">
-                <button className="user">
-                  <Link to="/detail/1">
-                  <FaBars className="bars"/>
-                  </Link>
-                  <FaUserCircle className="user-img"/></button>
+                  <Dropdown className="user">
+                    <Dropdown.Toggle  id="dropdown-basic">
+                    <FaBars className="bars"/>
+                    <FaUserCircle className="user-img"/>
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                     {login()}
+                    </Dropdown.Menu>
+                  </Dropdown>
               </div>
             </Navbar.Collapse>
           </Container>

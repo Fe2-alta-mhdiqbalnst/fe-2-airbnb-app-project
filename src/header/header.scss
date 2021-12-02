@@ -6,6 +6,8 @@
   .navbar-main {
     height: 100px;
     background-color: white;
+    box-shadow: rgb(0 0 0 / 8%) 0px 1px 12px;
+
     .logo {
       color: orange;
       justify-content: space-between;
@@ -96,9 +98,7 @@
     .navbar-btn {
       padding-right: 20px;
       margin-left: 200px;
-      :hover {
-        color: navy;
-      }
+      
 
       .user {
         border: none;
@@ -106,9 +106,8 @@
         height: 45px;
         margin: 0px 20px;
         width: 100px;
-        :hover {
-          color: orange;
-        }
+        
+        
         .bars {
           font-size: 25px;
           margin: 8px 20px;
@@ -117,10 +116,32 @@
         .user-img {
           font-size: 40px;
           margin-left: 50px;
+          color: #a09e9e ;
         }
       }
     }
   }  
+}
+
+img, svg {
+  color: #a09e9e ;
+}
+
+#dropdown-basic {
+  background-color: transparent;
+  border-radius: 50px;
+  border-color: #c7c5c5;
+}
+
+.dropdown-menu.show {
+  width: 250px;
+  padding: 15px;
+  left: -133px;
+  margin-top: 20px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 1px 12px;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
 }
 
 //responsive untuk handphone
@@ -130,3 +151,8 @@
     height: auto;
   }
 } 
+
+
+.dropdown-toggle::after {
+  display: none;
+}

@@ -1,0 +1,564 @@
+{
+	"info": {
+		"_postman_id": "a8f86dc9-726f-4fb2-a2b6-3b24c6ad0e8c",
+		"name": "Airbnb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "room@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "room",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "doni",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "@doni",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/jwt/users/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2Mzc2NzY0ODAsInVzZXJJZCI6NH0.GiSfmNuxtGInckArt6JUWQAjOWRSYk3BPU45lxTSeBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\":\"lia\",\r\n    \"email\":\"lia@lia.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/users/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2Mzc3OTA4MjAsInVzZXJJZCI6MX0.Y-MExNNlCPdlP2z2Zqtcoj1bxafLKOqd8_FLIjFbgAE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\":\"lia\",\r\n    \"email\":\"lia@lia.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/users/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "create reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxMjQyMTMsInVzZXJJZCI6N30.W4zcl-BUObmK7RaRKETyl0C2XaZ60NQ9emYjXgRhLiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n \"reservation\":{\r\n      \"homestay_id\": 2,\r\n      \"start_date\": \"2020-10-29\",\r\n      \"end_date\": \"2020-10-30\"\r\n  },\r\n  \"credit_card\": {\r\n      \"typ\": \"Visa\",\r\n      \"name\": \"sahril\",\r\n      \"number\": \"1000-1000-1000-1000\",\r\n      \"cvv\": 10101,\r\n      \"month\": 1,\r\n      \"year\": 2022\r\n  }\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/reservation",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxMTgwMDYsInVzZXJJZCI6N30.ucZfHqovltvFyDh34JarGol7WEoYkfmFVwLbkcSWxCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"homestay_id\": 1,\r\n  \"start_date\": \"2023-10-29\",\r\n  \"end_date\": \"2023-10-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/reservation/check",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"reservation",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get reservation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxMTgwMDYsInVzZXJJZCI6N30.ucZfHqovltvFyDh34JarGol7WEoYkfmFVwLbkcSWxCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/reservation",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "homestay",
+			"item": [
+				{
+					"name": "Create Homestay",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxNzkzMTQsInVzZXJJZCI6MX0.ywJPfMT0Om2zDs5VB8h0osDrQPi3jGdO4VTx1tOXZnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name_homestay\":\"bebas\",\r\n    \"price\":100000,\r\n    \"description\":\"lorem\",\r\n    \"address\":\"bandung, jawa barat, indonesia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/homestay",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"homestay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Homestay",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxNzkzMTQsInVzZXJJZCI6MX0.ywJPfMT0Om2zDs5VB8h0osDrQPi3jGdO4VTx1tOXZnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/jwt/homestay",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"homestay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Homestay By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxNzkzMTQsInVzZXJJZCI6MX0.ywJPfMT0Om2zDs5VB8h0osDrQPi3jGdO4VTx1tOXZnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/jwt/homestay/11",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"homestay",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Homestay By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxNzkzMTQsInVzZXJJZCI6MX0.ywJPfMT0Om2zDs5VB8h0osDrQPi3jGdO4VTx1tOXZnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name_homestay\":\"Villa Majapahit\",\r\n    \"price\":100000,\r\n    \"description\":\"lorem ipsum\",\r\n    \"address\":\"bandung, jawa barat, indonesia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/homestay/18",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"homestay",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Homestay",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxNzkzMTQsInVzZXJJZCI6MX0.ywJPfMT0Om2zDs5VB8h0osDrQPi3jGdO4VTx1tOXZnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/jwt/homestay/11",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"homestay",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Homestay_Facility",
+			"item": [
+				{
+					"name": "Create Homestay_Facility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxNzkzMTQsInVzZXJJZCI6MX0.ywJPfMT0Om2zDs5VB8h0osDrQPi3jGdO4VTx1tOXZnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"homestay_id\": 12,\r\n    \"facility_id\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/homestay/facilities",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"homestay",
+								"facilities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Homestay_Facility by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MzgxNzkzMTQsInVzZXJJZCI6MX0.ywJPfMT0Om2zDs5VB8h0osDrQPi3jGdO4VTx1tOXZnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"homestay_id\": 12,\r\n    \"facility_id\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/jwt/homestay/facilities/9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jwt",
+								"homestay",
+								"facilities",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

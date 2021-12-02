@@ -1,0 +1,61 @@
+@import '../Common/globalColor.scss';
+
+
+.reservation-section {
+  margin: 100px 20px;
+  h1,h3 {
+    background-color: navajowhite;
+    padding: 50px 5px;
+  }
+  .main-section {
+    .data-pict {
+      justify-content: space-between;
+      display: flex;
+      padding: 15px 0px;
+      border-bottom: 3px solid orange;
+    }
+  }
+
+}
+
+.sec-left {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 0px;
+  font-weight: 400;
+  // position: fixed;
+  .facility-section {
+    width: 100%;
+  }
+  .reservation-form {
+    margin: 10px 20px 20px 300px;
+    border: 10px solid $font-secondary;
+    border-radius: 25px;
+    box-shadow: 2px 2px;
+    width: 50%;
+    height: auto;
+    padding: 20px 20px;
+    font-weight: bolder;
+    h5 {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .line-color {
+      background-color: lightskyblue;
+    }
+    .total-price {
+      background-color: limegreen;
+    }
+    span {
+      letter-spacing: 5px;
+      margin-left: 10px;
+      
+    }
+    button:hover {
+      border-radius: 10px;
+      background-color: $font-secondary;
+      color: $primary-color;
+    }
+    background-image: url('../images/bubble.jpg');
+  }
+}

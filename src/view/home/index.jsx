@@ -1,5 +1,5 @@
 import './home.scss';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import a from '../../images/a.jpg';
 import b from '../../images/b.jpg';
 import c from '../../images/c.jpg';

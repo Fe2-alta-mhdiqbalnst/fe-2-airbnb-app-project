@@ -1,13 +1,13 @@
-@import '../Common/globalColor.scss';
+
 
 
 .header {
-  color: $primary-color;
+  color: white;
   .navbar-main {
     height: 100px;
-    background-color: $primary-color;
+    background-color: white;
     .logo {
-      color: $font-secondary;
+      color: orange;
       justify-content: space-between;
       display: inline-block;
       padding: 0px 20px;
@@ -49,7 +49,7 @@
         background-color: transparent;
         width: 15vw;
         margin-left: -7px;
-        color: $font-primary;
+        color: black;
 
         p, input {
           padding-left: 30px;
@@ -57,7 +57,7 @@
           border: none;
           border-radius: 25px;
           width: 14vw;
-          background-color: $primary-color;
+          background-color: white;
         }
       }
 
@@ -88,7 +88,7 @@
         box-shadow: 4px 0px lightskyblue;
         border: none;
         .src-icon {
-          color: $primary-color;
+          color: white;
         }
       }
     }

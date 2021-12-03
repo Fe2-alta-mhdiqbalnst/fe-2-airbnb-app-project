@@ -1,3 +1,115 @@
+@media (max-width: 2560px) {
+  .header {
+    color: white;
+    padding: 0px 60px;
+    font-size: 25px;
+    height: 200px;
+    .navbar-main {
+      height: 180px;
+      background-color: white;
+      .logo {
+        color: orange;
+        justify-content: space-between;
+        display: inline-block;
+        padding: 0px 20px;
+        font-size: 80px;
+        text-decoration: none;
+        margin: 0px 0px 0px 40px;
+        :hover{
+          color: navy;
+        }
+        h6 {
+          display: inline-block;
+          padding-top: 6px;
+          font-size: 50px;
+        }
+      }
+  
+      .search-bar {
+        border: 1px solid orange;
+        box-shadow: 5px 5px paleturquoise;
+        border-radius: 35px;
+        display: flex;
+        justify-content: space-around;
+        margin: 0px 0px 0px 600px;
+        width: 30vw;
+        height: 120px;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 8px 0px;
+        button:hover {
+          background-color: orange;
+          transition: ease-in-out;
+        }
+        :active:hover {
+          background-color: burlywood;
+          transition: ease-in-out;
+        }
+  
+  
+        .location {
+          border: 1px solid orange;
+          border-radius: 30px;
+          background-color: transparent;
+          width: 100%;
+          padding: 5px 5px;
+          color: black;
+  
+          p, input {
+            font-size: 20px;
+            padding-left: 30px;
+            padding-bottom: 5px;
+            border: none;
+            border-radius: 25px;
+            width: 60%;
+            background-color: white;
+          }
+        }
+  
+        .btn-search {
+          width: 5vw;
+          height: auto;
+          border-radius: 50px;
+          background-color: rgb(224, 164, 51);
+          box-shadow: 4px 0px lightskyblue;
+          border: none;
+          .src-icon {
+            color: white;
+          }
+        }
+      }
+      
+  
+      .navbar-btn {
+        padding-right: 20px;
+        margin-left: 500px;
+        :hover {
+          color: navy;
+        }  
+        .user {
+          border: none;
+          border-radius: 25px;
+          height: 45px;
+          margin: 0px 20px;
+          width: 100px;
+          :hover {
+            color: orange;
+          }
+          .bars {
+            font-size: 25px;
+            margin: 8px 20px;
+            position: absolute;
+          }
+          .user-img {
+            font-size: 40px;
+            margin-left: 50px;
+          }
+        }
+      }
+    }  
+  }
+  }
+
 @media (max-width: 1652px) {
   .header {
     color: white;

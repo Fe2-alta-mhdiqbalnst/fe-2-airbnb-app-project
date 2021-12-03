@@ -50,7 +50,7 @@ const Header = () => {
                     </div>
                   </button>
 
-                  <button className="checkIn" onClick={()=>setShow(!show)}>
+                  {/* <button className="checkIn" onClick={()=>setShow(!show)}>
                     <div>
                     Check in <br/>
                     Add dates
@@ -61,13 +61,16 @@ const Header = () => {
                     Check out <br/>
                     Add dates
                     </div>
-                  </button>
+                  </button> */}
                   <button type="submit" className="btn-search"><i className="fa fa-search src-icon" ></i> </button>
                 </div>
               </form>
               <div className="navbar-btn">
+              <div className="hostinger">
+                <button>Become a host</button>
+              </div>
                 <button className="user">
-                  <Link to="/reservation-detail/1">
+                  <Link to="/Reservation">
                   <FaBars className="bars"/>
                   </Link>
                   <FaUserCircle className="user-img"/></button>

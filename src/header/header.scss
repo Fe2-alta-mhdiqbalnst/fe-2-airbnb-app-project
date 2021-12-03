@@ -1,10 +1,131 @@
+@media (max-width: 1652px) {
+  .header {
+    color: white;
+    .navbar-main {
+      height: 150px;
+      background-color: white;
+      .logo {
+        color: orange;
+        justify-content: space-between;
+        display: inline-block;
+        padding: 0px 20px;
+        font-size: 35px;
+        text-decoration: none;
+        :hover{
+          color: navy;
+        }
+        h6 {
+          display: inline-block;
+          padding-top: 6px;
+          font-size: 20px;
+        }
+      }
+  
+      .search-bar {
+        border: 1px solid orange;
+        box-shadow: 5px 5px paleturquoise;
+        border-radius: 35px;
+        display: flex;
+        justify-content: space-around;
+        margin: 10px 0px 10px 300px;
+        width: 700px;
+        cursor: pointer;
+        background-color: transparent;
+        padding: 8px 0px;
+        button:hover {
+          background-color: orange;
+          transition: ease-in-out;
+        }
+        :active:hover {
+          background-color: burlywood;
+          transition: ease-in-out;
+        }
+  
+  
+        .location {
+          border: 1px solid orange;
+          border-radius: 30px;
+          background-color: transparent;
+          width: 85%;
+          padding: 5px 5px;
+          color: black;
+  
+          p, input {
+            font-size: 20px;
+            padding-left: 30px;
+            padding-bottom: 5px;
+            border: none;
+            border-radius: 25px;
+            // width: 60%;
+            background-color: white;
+          }
+        }
+  
+        .btn-search {
+          width: 5vw;
+          height: 5vw;
+          border-radius: 50px;
+          background-color: rgb(224, 164, 51);
+          box-shadow: 4px 0px lightskyblue;
+          border: none;
+          .src-icon {
+            color: white;
+          }
+        }
+      }
+      
+  
+      .navbar-btn {
+        padding-right: 20px;
+        margin-left: 300px;
+        :hover {
+          color: navy;
+        }
+        .hostinger {
+          font-size: 18px;
+          position: absolute;
+          margin: 5px 0px 0px -150px;
+          button:hover {
+            background-color: orange;
+            color: white;
+          }
+          button {
+            background-color: transparent;
+            border: none;
+            border-radius: 15px;
+            padding: 5px 15px;
+          }
+        }
+  
+        .user {
+          border: none;
+          border-radius: 25px;
+          height: 45px;
+          margin: 0px 20px;
+          width: 100px;
+          :hover {
+            color: orange;
+          }
+          .bars {
+            font-size: 25px;
+            margin: 8px 20px;
+            position: absolute;
+          }
+          .user-img {
+            font-size: 40px;
+            margin-left: 50px;
+          }
+        }
+      }
+    }  
+  }
+  }
 
-
-
+@media (max-width: 1440px) {
 .header {
   color: white;
   .navbar-main {
-    height: 100px;
+    height: 120px;
     background-color: white;
     .logo {
       color: orange;
@@ -30,7 +151,7 @@
       display: flex;
       justify-content: space-around;
       margin-left: 15vw;
-      width: 600px;
+      width: 500px;
       cursor: pointer;
       background-color: transparent;
       button:hover {
@@ -47,7 +168,7 @@
         border: 1px solid orange;
         border-radius: 30px;
         background-color: transparent;
-        width: 15vw;
+        width: 80%;
         margin-left: -7px;
         color: black;
 
@@ -56,7 +177,7 @@
           padding-bottom: 5px;
           border: none;
           border-radius: 25px;
-          width: 14vw;
+          width: 60%;
           background-color: white;
         }
       }
@@ -95,9 +216,24 @@
 
     .navbar-btn {
       padding-right: 20px;
-      margin-left: 200px;
+      margin-left: 300px;
       :hover {
         color: navy;
+      }
+      .hostinger {
+        font-size: 18px;
+        position: absolute;
+        margin: 5px 0px 0px -150px;
+        button:hover {
+          background-color: orange;
+          color: white;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          border-radius: 15px;
+          padding: 5px 15px;
+        }
       }
 
       .user {
@@ -122,11 +258,194 @@
     }
   }  
 }
+}
+
+@media (max-width: 768px) {
+  .header {
+    color: white;
+    .navbar-main {
+      .search-bar {
+        position: absolute;
+        border: 1px solid orange;
+        box-shadow: 2px 2px paleturquoise;
+        border-radius: 35px;
+        justify-content: space-around;
+        width: fit-content;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: 14px;
+        margin: 80px 0px 0px 260px;
+        button:hover {
+          background-color: orange;
+          transition: ease-in-out;
+        }
+        :active:hover {
+          background-color: burlywood;
+          transition: ease-in-out;
+        }
+  
+  
+        .location {
+          border: 1px solid orange;
+          border-radius: 30px;
+          background-color: transparent;
+          width: auto;
+          height: fit-content;
+          margin-left: 7px;
+          color: black;
+  
+          p, input {
+            padding-left: 30px;
+            // padding-bottom: 5px;
+            border: none;
+            border-radius: 25px;
+            width: auto;
+            background-color: white;
+          }
+        }
+        
+        .btn-search {
+          width: 5vw;
+          height: 5vw;
+          border-radius: 50px;
+          background-color: rgb(224, 164, 51);
+          box-shadow: 4px 0px lightskyblue;
+          border: none;
+          .src-icon {
+            color: white;
+          }
+        }
+      }
+  
+      .navbar-btn {
+        .hostinger {
+          font-size: 14px;
+          position: absolute;
+          margin: 35px 0px 0px 110px;
+          button {
+            background-color: transparent;
+            border: none;
+            border-radius: 15px;
+          }
+        }
+  
+        .user {
+          position: absolute;
+          border: none;
+          border-radius: 25px;
+          height: 35px;
+          margin: 35px 0px 0px 230px;
+          width: 80px;
+          :hover {
+            color: orange;
+          }
+          .bars {
+            // font-size: 25px;
+            margin: 2px 2px;
+            position: absolute;
+          }
+          .user-img {
+            font-size: 30px;
+            margin-left: 30px;
+          }
+        }
+      }
+    }  
+  }
+}
 
 //responsive untuk handphone
 @media (max-width: 575.98px) {
-  .search-bar {
-    width: 100px;
-    height: auto;
+  .header {
+    color: white;
+    .navbar-main {
+      .search-bar {
+        height: 50px;
+        position: absolute;
+        border: 1px solid orange;
+        box-shadow: 2px 2px paleturquoise;
+        border-radius: 35px;
+        display: flex;
+        justify-content: space-around;
+        width: 250px;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: 12px;
+        margin: 0px 0px 0px 10px;
+        button:hover {
+          background-color: orange;
+          transition: ease-in-out;
+        }
+        :active:hover {
+          background-color: burlywood;
+          transition: ease-in-out;
+        }
+  
+  
+        .location {
+          font-size: 14px;
+          border: 1px solid orange;
+          border-radius: 30px;
+          background-color: transparent;
+          width: auto;
+          height: fit-content;
+          color: black;
+  
+          p, input {
+            font-size: 12px;
+            border: none;
+            border-radius: 25px;
+            width: 70%;
+            background-color: white;
+          }
+        }
+        
+        .btn-search {
+          width: 40px;
+          height: auto;
+          border-radius: 50px;
+          background-color: rgb(224, 164, 51);
+          box-shadow: 4px 0px lightskyblue;
+          border: none;
+          .src-icon {
+            color: white;
+          }
+        }
+      }
+  
+      .navbar-btn {
+        .hostinger {
+          font-size: 14px;
+          position: absolute;
+          margin: 10px 0px 0px -35px;
+          button {
+            background-color: transparent;
+            border: none;
+            border-radius: 15px;
+          }
+        }
+  
+        .user {
+          position: relative;
+          border: none;
+          border-radius: 25px;
+          height: 35px;
+          margin: 10px 0px 0px 95px;
+          width: 80px;
+          :hover {
+            color: orange;
+          }
+          .bars {
+            // font-size: 25px;
+            margin: 2px 2px;
+            position: absolute;
+          }
+          .user-img {
+            font-size: 30px;
+            margin-left: 30px;
+          }
+        }
+      }
+    }  
   }
 } 

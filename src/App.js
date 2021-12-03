@@ -5,11 +5,12 @@ import {
   Route
 } from "react-router-dom";
 import Header from './header/header';
-import Reservation from './view/Reservation/Reservation';
+// import Reservation from './view/Reservation/Reservation';
 
 // import SignUp from './view/signUp';
 // import SignIn from './view/signIn';
 import Home from './view/home';
+import Pay from './view/Reservation/Payments/App.jsx';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
     <Header></Header>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/reservation-detail/:id" element={<Reservation />} />
+      <Route path="/payments" element={<Pay/>}/>
+      {/* <Route path="/reservation-detail/:id" element={<Reservation />} /> */}
     </Routes>
   </BrowserRouter>
   );

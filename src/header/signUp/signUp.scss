@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: circular-light;
+  src: url(../../fonts/Circular/CircularStd-MediumItalic.otf);
+}
+
+.modal-dialog {
+  max-width: 568px;
+}
+
+.modal-content {
+  margin-top: 150px;
+  border-radius: 15px;
+}
+
+.modal-header {
+  padding-left: 30px;
+}
+
+.modal-body {
+  padding: 30px;
+}
+.title-daftar {
+  font-size: 18px;
+  color: #222222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.title-form {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #222222;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border: 2px solid;
+  border-color: #FF7E06;
+  border-bottom: 2px solid #FF7E06;
+  outline: 0;
+  box-shadow: none;
+}
+
+.b-bottom-signup {
+  border: 1px solid #afafaf;
+  border-bottom: 1px solid #afafaf;
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.b-mid-signup {
+  border: none;
+  border-right: 1px solid #afafaf;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-left: 1px solid #afafaf;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.b-top-signup {
+  border: 1px solid #afafaf;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.href {
+  color: #222222;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.href:hover {
+  color: #222222;
+}
+
+.btn-submit {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid #FF7E06;
+  border: none;
+    background-image: radial-gradient(circle at center center, #FF7E06 0%, #e27209 100%) !important;
+  box-shadow: 0 3px 6px #afafaf;
+}
+
+.btn-signUp {
+  background-color: transparent;
+  text-align: left;
+  color: #222222;
+  border: none;
+  padding: 10px;
+  width: 220px;
+}
+
+.btn-primary:hover {
+  background-color: #ebebeb;
+  color: #222222;
+}
+

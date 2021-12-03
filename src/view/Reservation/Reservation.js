@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import './Reservation.scss';
 import { useParams } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import a from '../../images/a.jpg';
 import b from '../../images/b.jpg';
 import c from '../../images/c.jpg';
 import d from '../../images/d.jpg';
+import allStore from '../../store/actions';
+import { fetchPost } from '../../store/actions/fetchPost';
 
+// import { fetchPost } from '../../store/actions/fetchPost';
+// import { removeSelectedLocation } from './homestaySlice';
 
 const Reservation = () => {
   const [detail, setDetail] = useState(null);
   const params = useParams();
   const posts = useSelector(({listPost}) => listPost);
-
+  const dispatch = useDispatch();
+  
 
   const [usersID, setUsersID] = useState('');
   const [homestayID, setHomestayID] = useState('');
@@ -21,6 +26,8 @@ const Reservation = () => {
   const [endDate, setEndDate] = useState('');
   const [ciDate, setCIDate] = useState(Date);
   const [coDate, setCODate] = useState(Date);
+
+
 
   const submitCA = (e) => {
     e.preventDefault();
@@ -81,12 +88,19 @@ const Reservation = () => {
   //get detail
 
   useEffect(() => {
-    const findDetail = posts.find(el => el.id === +params.id)
-    setDetail(findDetail)
-  }, [params, posts])
+    dispatch(allStore.fetchPost());
+  },[dispatch])
+  
+  // useEffect(() => {
+  //   const findDetail = posts.find(el => el.id === +params.id)
+  //   setDetail(findDetail)
+  // }, [params, posts])
+  
 
-  if(!detail) {
+  if(!posts.Data) {
     return <></>
+  } else {
+    console.log(posts.Data[0]["Name_Homestay"])
   }
   
   return (
@@ -130,9 +144,9 @@ const Reservation = () => {
           <h5>Reservation</h5>
           <div className="reservation-column">
             <form>
-              <p className="line-color">User ID <span>:</span> {detail.id}</p>
-              <p>Homestay ID<span>:</span> {detail.id}</p>
-              <p className="line-color">Name <span>:</span> {detail.id}</p>
+              <p className="line-color">User ID <span>:</span> {posts.Data["Name_Homestay"]}</p>
+              <p>Homestay ID<span>:</span> {posts.Data["Name_Homestay"]}</p>
+              <p className="line-color">Name <span>:</span> {posts.Data["Name_Homestay"]}</p>
               <div className="date-reserve">
               <p>Start Date <span>:</span><input type="date" placeholder="dd/mm/yyyy"/></p>
               <p className="line-color">End Date <span>:</span> <input type="date" placeholder="dd/mm/yyyy"/></p>

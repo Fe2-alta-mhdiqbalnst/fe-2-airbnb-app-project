@@ -83,6 +83,7 @@
 }
 
 .btn-submit {
+  width: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   border-radius: 10px;
@@ -92,17 +93,27 @@
   box-shadow: 0 3px 6px #afafaf;
 }
 
-.btn-signUp {
-  background-color: transparent;
-  text-align: left;
-  color: #222222;
-  border: none;
+.was-validated:invalid .invalid-feedback {
+  position: relative;
+  margin-top: -21px;
+  top: -21px;
+  left: 287px;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  border-color: #afafaf;
+}
+
+
+// .swal2-container.swal2-center>.swal2-popup {
+//   width: 568px!important;
+//   height: 380px!important;
+//   margin-top: -253px;
+//   margin-left: -15px;
+// }
+
+.btn-cls {
+  position: relative;
+  left: 450px;
   padding: 10px;
-  width: 220px;
 }
-
-.btn-primary:hover {
-  background-color: #ebebeb;
-  color: #222222;
-}
-

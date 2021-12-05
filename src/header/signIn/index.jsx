@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import { useState } from "react";
+import { Button, Modal, Form, Spinner } from "react-bootstrap";
 import axios from "axios";
+import Swal from 'sweetalert2';
 import './signIn.scss';
-
+ 
 const SignIn = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -11,10 +12,12 @@ const SignIn = () => {
 
   const [email, emailUpdate]       = useState("");
   const [password, passwordUpdate] = useState("");
-  const [token, tokenUpdate]       = useState("");
+  const [loading, setLoading]      = useState(false);
 
   const handleSubmit = (e) => { 
     e.preventDefault();
+    setLoading(true)
+
     const objInput = {
       "email": email,
       "password": password
@@ -22,25 +25,40 @@ const SignIn = () => {
     
     axios.post('http://18.139.84.71/login', objInput )
     .then(({data}) =>{
+      console.log(data);
      localStorage.setItem("token", data.Data.Token);
-     localStorage.setItem("user", data.Data.ID);
-      window.location.reload();
-    }).catch((err)=>{
-      console.log(err);
-    })
-  }
+     localStorage.setItem("userId", data.Data.ID);
+     localStorage.setItem("userName", data.Data.Name);
+     localStorage.setItem("email", email);
 
-  useEffect(() => {
-    tokenUpdate(localStorage.getItem("token"))
-  }, [token])
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: data.Message,
+        showConfirmButton: false,
+        timer: 1500
+      }).then((result) => {
+        handleClose();
+      })
+
+    }).catch((err)=>{
+      Swal.fire({
+        icon: 'error',
+        text: err.response.data.Message
+      })
+      setLoading(false);
+    }).finally(() => {
+      setLoading(false);
+    });
+  }
 
   return (
     <>
-      <Button className="btn-signIn" onClick={handleShow} >
+      <button className="btn-Account" onClick={handleShow} >
         Masuk
-      </Button>
+      </button>
 
-      <Modal show={show} onHide={handleClose} >
+      <Modal show={show} onHide={handleClose}  backdrop="static">
         <Modal.Header closeButton>
           <Modal.Title className="title-daftar">Masuk</Modal.Title>
         </Modal.Header>
@@ -59,8 +77,9 @@ const SignIn = () => {
           <a className="href" target="_blank" rel="noreferrer" href="https://www.airbnb.co.id/help/article/2855/kebijakan-privasi">Kebijakan Privasi</a>
         </Form.Group>
         
-        <Button className="form-control mb-1 p-2 btn-submit" type="submit">
-          Lanjutkan
+        <Button  className="mb-1 p-2 btn-submit" type="submit">
+          {loading && <Spinner animation="border" variant="light" />}
+          {!loading && <span>Lanjutkan</span>}
         </Button>
         </Form>
           

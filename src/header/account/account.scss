@@ -72,14 +72,18 @@
   color: #222222;
 }
 
-.btn-submit {
+.btn-submit-update {
+  width: 100%;
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
   border-radius: 10px;
   border: 1px solid #FF7E06;
   border: none;
     background-image: radial-gradient(circle at center center, #FF7E06 0%, #e27209 100%) !important;
   box-shadow: 0 3px 6px #afafaf;
+}
+
+.btn-submit-update:hover {
+  color: #ffffff;
 }
 
 .btn-Account {
@@ -91,7 +95,36 @@
   width: 220px;
 }
 
-.btn-primary:hover {
-  background-color: #ebebeb;
-  color: #222222;
+.btn-Account:hover {
+  background-color: #e2e2e2;
+}
+
+.btn-delete {
+  width: 100%;
+  padding: 8px;
+  color: #ffffff;
+  background-color: #da2626;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px #afafaf;
+}
+
+.btn-delete:hover {
+  background-color: #da2626!important;
+  color: #ffffff!important;
+}
+
+.btn-delete:active {
+  background-color: #da2626!important;
+}
+
+.swal2-container.swal2-center > .swal2-popup {
+  width: 520px;
+  height: 280px;
+  margin-top: -230px;
+  margin-left: -5px;
+}
+
+.swal2-container.swal2-backdrop-show {
+  background: rgb(0 0 0 / 90%);
 }

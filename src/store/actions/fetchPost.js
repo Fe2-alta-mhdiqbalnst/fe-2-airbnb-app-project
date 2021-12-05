@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const fetchPost = () => {
+export const fetchPost = (id) => {
   return (dispatch) => {
     axios.get("http://18.139.84.71/homestay") //server link dari backend
     .then(({data}) => {

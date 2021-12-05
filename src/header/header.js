@@ -83,18 +83,6 @@ const Header = () => {
                     </div>
                   </button>
 
-                  <button className="checkIn" onClick={()=>setShow(!show)}>
-                    <div>
-                    Check in <br/>
-                    Add dates
-                    </div>
-                  </button>
-                  <button className="checkOut" onClick={()=>setShow(!show)}>
-                    <div>
-                    Check out <br/>
-                    Add dates
-                    </div>
-                  </button>
                   <button type="submit" className="btn-search"><i className="fa fa-search src-icon" ></i> </button>
                 </div>
               </form>

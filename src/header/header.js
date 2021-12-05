@@ -12,7 +12,6 @@ import Account from './account';
 import Swal from 'sweetalert2';
 
 const Header = () => {
-  const [show, setShow] = useState(false);
   const [isLogin, setLogin] = useState([<SignUp />,<SignIn />]);
   const navigate = useNavigate();
   //searching
@@ -69,23 +68,7 @@ const Header = () => {
                 </div>
               </Link>
             </div>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-              <Navbar.Collapse id="navbarScroll">
-              <form onSubmit={submitHandler}>
-                <div className="search-bar">
-                  <button className="location">
-                    <div>
-                      Location
-                      <input type="text" value={location} placeholder="Starts your search" onChange={(e) =>{
-                        handleChange(e)
-                        setLocation(e.target.value)
-                      }} />
-                    </div>
-                  </button>
-
-                  <button type="submit" className="btn-search"><i className="fa fa-search src-icon" ></i> </button>
-                </div>
-              </form>
+           
               <div className="navbar-btn">
                   <Dropdown className="user" onClick={() => login()}>
                     <Dropdown.Toggle  id="dropdown-basic" >
@@ -98,7 +81,7 @@ const Header = () => {
                     </Dropdown.Menu>
                   </Dropdown>
               </div>
-            </Navbar.Collapse>
+         
           </Container>
         </Navbar>
         {/* {

@@ -1,0 +1,64 @@
+.c-withmap {
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+
+  .page-homestay {
+    width:50%;
+    display: inline-block;
+
+    h2 {
+      padding-top: 10px;
+      margin: 0;
+      padding-left: 50px;
+    }
+
+    .list {
+      display: flex;
+      padding: 20px 50px;
+      border-bottom: 1px solid #d8d8d8;
+      cursor: pointer;
+
+      img {
+        width: 300px;
+        height: 200px;
+        border-radius: 20px;
+        box-shadow: 0 3px 6px #222222;
+      }
+
+      .info-list {
+        padding-left: 20px;
+        position: relative;
+        width: 60%;
+
+        p:first-child {
+          margin: 0;
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        p:nth-child(3) {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          margin: 0;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    margin-top: 5px;
+    margin-right: 10px;
+    float: right;
+  }
+
+  .page-map {
+    
+    height: 90vh;
+    width: 50%;
+
+  }
+}

@@ -1,18 +1,44 @@
 import './home.scss';
+import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import a from '../../images/a.jpg';
-import b from '../../images/b.jpg';
-import c from '../../images/c.jpg';
-import d from '../../images/d.jpg';
 import facebook from '../../images/facebook.png';
 import instagram from '../../images/instagram.png';
 import twitter from '../../images/twitter.png';
+import { useDispatch, useSelector } from 'react-redux';
+import allStore from "../../store/actions";
 
 const Home = () => {
  const navigate = useNavigate();
+
+ const dispatch = useDispatch();
+  const homestay = useSelector(({listPost}) => listPost);
+  const [state, updateState] = useState(null);
+
+  useEffect(() => {
+    dispatch(allStore.fetchPost());
+  }, [dispatch]);
+
+  useEffect(() => {
+    updateState(homestay);
+  },[homestay])
+    
+
  const toHomeStay = () => {
    navigate('/homestay');
  }
+ 
+if (homestay.Data === undefined ) {return <></>}
+if (state === null ) {return  <></>}
+if (state.Data === undefined ) {return  <></>}
+ 
+const address = state.Data.map((el) => el.Address);
+const uniq = address.reduce(function(a,b){
+  if (a.indexOf(b) < 0 ) a.push(b);
+  return a;
+},[]);
+ 
+console.log(address);
 
   return (
     <>
@@ -28,26 +54,13 @@ const Home = () => {
       <div className="container-mid">
         <h2>Jelajahi sekitar</h2>
         <div className="c-box">
-          <div className="in-box">
-            <picture><img src={a} alt="a" /></picture>
-              <h3>Jakarta </h3>
-              <span>DKI Jakarta</span>
+          {uniq.map((el) => 
+          <div className="in-box" >
+            <picture onClick={(e) => navigate(`/homestay-map/${el}`)}><img src={a} alt="a" /></picture>
+              <h4 style={{ fontWeight : "bold" }}>{el}</h4>
+              <span></span>
           </div>
-          <div className="in-box">
-            <picture><img src={b} alt="b" /></picture>
-              <h3>Medan</h3>
-              <span>Sumatera Utara</span>
-          </div>
-          <div className="in-box">
-            <picture><img src={c} alt="c" /></picture>
-              <h3>Surabaya </h3>
-              <span>Jawa Timur</span>
-          </div>
-          <div className="in-box">
-            <picture><img src={d} alt="d" /></picture>
-              <h3>Padang </h3>
-              <span>Sumatera Barat</span>
-          </div>
+         )}
         </div>
       </div>
     </div>
